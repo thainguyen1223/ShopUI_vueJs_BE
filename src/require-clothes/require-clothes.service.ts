@@ -1,10 +1,10 @@
 import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
-import { RequireClothes, RequireClothesDocument } from "src/require-clothes/schemas/require-clothes";
 
 import { Model, ObjectId } from "mongoose";
 import { CreateRequireClothesDto } from "./dto/create-require-clothes-dto";
 import { UpdateRequireClothesDto } from "./dto/update-require-clothes-dto";
+import { RequireClothes, RequireClothesDocument } from "./schemas/require-clothes";
 @Injectable()
 export class RequireClothesService {
   constructor(@InjectModel(RequireClothes.name) private RequireClothesModel: Model<RequireClothesDocument>) {}
