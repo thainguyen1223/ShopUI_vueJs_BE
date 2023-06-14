@@ -16,13 +16,12 @@ export class RequireClothesService {
   //get all
   async showAll(page: number, limit: number): Promise<any> {
     const data = await this.RequireClothesModel.find()
-      .limit(limit)
+    .limit(limit)
       .skip(limit * (page - 1))
-      .sort({ startDate: "asc" })
-      .populate("participants")
+      .sort({ sendDate: "desc" })
       .exec();
 
-    const count = await this.RequireClothesModel.count();
+    const count = await this.RequireClothesModel.find().count();
     return { data: data, total: count };
     //return this.EventModel.find().populate("users").exec();
   }
@@ -31,7 +30,8 @@ export class RequireClothesService {
     //  post
     async create(createRequireClothesDto: CreateRequireClothesDto): Promise<RequireClothes> {
         const createRequireClothes = new this.RequireClothesModel(createRequireClothesDto);
-    
+      console.log(createRequireClothes);
+      
         return createRequireClothes.save();
     }
     //update = id

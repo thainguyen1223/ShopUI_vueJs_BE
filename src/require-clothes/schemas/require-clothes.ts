@@ -11,61 +11,60 @@ export class RequireClothes {
   _id: ObjectId;
 
   @Prop()
-  Firstname: string;
+  firstname: string;
 
   @Prop()
-  Lastname: string;
+  lastname: string;
 
   @Prop()
-  Street: string;
+  statictreet: string;
+
+
 
   @Prop()
-  startDate: string;
+  phone: string;
 
   @Prop()
-  phone: number;
-
-  @Prop()
-  email: number;
+  email: string;
 
   @Prop()
   status: string;
 
   @Prop()
-  additional: number;
+  additional: string;
 
   @Prop()
   title: string;
 
-  @Prop()
-  quantity: string;
+  // @Prop()
+  // quantity: string;
 
-  @Prop()
-  new: string;
+  // @Prop()
+  // new: string;
 
-  @Prop()
-  best: string;
+  // @Prop()
+  // best: string;
 
-  @Prop()
-  price: string;
+  // @Prop()
+  // price: string;
 
-  @Prop()
-  discount: string;
+  // @Prop()
+  // discount: string;
 
-  @Prop([String])
-  category: string[];
+  // @Prop([String])
+  // category: string[];
 
-  @Prop([String])
-  images: string[];
+  // @Prop([String])
+  // images: string[];
 
-  @Prop()
-  description: string;
+  // @Prop()
+  // description: string;
 
-  @Prop([String])
-  color: string[];
+  // @Prop([String])
+  // color: string[];
 
-  @Prop([String])
-  size: string[];
+  // @Prop([String])
+  // size: string[];
 }
 
 export const RequireClothesSchema = SchemaFactory.createForClass(RequireClothes);

@@ -18,83 +18,71 @@ import internal from "stream";
 export class CreateRequireClothesDto {
   @IsString()
   @IsNotEmpty()
-  Firstname: string;
+  firstname: string;
 
   @IsNotEmpty()
   @IsString()
-  Lastname: string;
+  lastname: string;
 
-  @IsDateString()
-  @IsNotEmpty()
-  startDate: string;
-
-  @IsDateString()
-  @IsNotEmpty()
-  Street: string;
-
-  @IsNotEmpty()
-  @IsNumberString()
-  phone: number;
-
-  @IsNotEmpty()
-  @IsNumberString()
-  email: number;
-
-  @IsBooleanString()
-  @IsOptional()
-  status: "true";
-
-  @IsNotEmpty()
-  @IsOptional()
-  participants: string[];
-
-  @IsNotEmpty()
-  @IsString()
-  additional: number;
 
   @IsString()
   @IsNotEmpty()
+  street: string;
+
+  @IsNotEmpty()
+  @IsString()
+  phone: string;
+
+  // @IsNotEmpty()
+  // @IsEmail()
+  // email: string;
+
+  @IsNotEmpty()
+  @IsString()
+  additional: string;
+
+  @IsString()
   title?: string ;
 
-  @IsOptional()
-  @IsInt()
-  quantity?: number = 1;
+  // @IsOptional()
+  // @IsInt()
+  // quantity?: number = 1;
 
-  @IsOptional()
-  @IsBooleanString()
-  new?: string = "true";
+  // @IsOptional()
+  // @IsBooleanString()
+  // new?: string = "true";
 
 
-  @IsOptional()
-  @IsBooleanString()
-  best?: string = "true";
+  // @IsOptional()
+  // @IsBooleanString()
+  // best?: string = "true";
 
-  @IsOptional()
-  @IsInt()
-  price?: number = 0;
+  // @IsOptional()
+  // @IsInt()
+  // price?: number = 0;
 
-  @IsOptional()
-  @IsInt()
-  discount?: number = 0;
+  // @IsOptional()
+  // @IsInt()
+  // discount?: number = 0;
 
-  @IsArray()
-  @IsOptional()
-  category?: string[] ;
-  @IsArray()
-  @IsOptional()
-  images?: string[] ;
+  // @IsArray()
+  // @IsOptional()
+  // category?: string[] ;
+  // @IsArray()
+  // @IsOptional()
+  // images?: string[] ;
 
-  @IsString()
-  @IsOptional()
-  description?: string = '' ;
+  // @IsString()
+  // @IsOptional()
+  // description?: string = '' ;
 
-  @IsArray()
+  // @IsArray()
   
-  @IsOptional()
-  color?: string[] ;
+  // @IsOptional()
+  // color?: string[] ;
 
-  @IsArray()
+  // @IsArray()
   
-  @IsOptional()
-  size?: string[] ;
+  // @IsOptional()
+  // size?: string[] ;
 }

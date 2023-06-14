@@ -18,80 +18,64 @@ import {
 export class UpdateRequireClothesDto {
   @IsString()
   @IsNotEmpty()
-  Firstname: string;
+  firstname: string;
 
   @IsNotEmpty()
   @IsString()
-  Lastname: string;
+  lastname: string;
 
-  @IsDateString()
+  @IsString()
   @IsNotEmpty()
   startDate: string;
 
-  @IsDateString()
+  @IsString()
   @IsNotEmpty()
   Street: string;
 
   @IsNotEmpty()
-  @IsNumberString()
-  phone: number;
+  @IsString()
+  phone: string;
 
-  @IsNotEmpty()
-  @IsNumberString()
-  email: number;
-
-  @IsBooleanString()
-  @IsOptional()
-  status: "true";
-
-  @IsNotEmpty()
-  @IsOptional()
-  participants: string[];
 
   @IsNotEmpty()
   @IsString()
-  additional: number;
+  additional: string;
+  // @IsOptional()
+  // @IsInt()
+  // quantity?: number = 1;
 
-  @IsString()
-  @IsNotEmpty()
-  title?: string;
+  // @IsOptional()
+  // @IsBooleanString()
+  // new?: string = "true";
 
-  @IsOptional()
-  @IsInt()
-  quantity?: number = 1;
+  // @IsOptional()
+  // @IsBooleanString()
+  // best?: string = "true";
 
-  @IsOptional()
-  @IsBooleanString()
-  new?: string = "true";
+  // @IsOptional()
+  // @IsInt()
+  // price?: number = 0;
 
-  @IsOptional()
-  @IsBooleanString()
-  best?: string = "true";
+  // @IsOptional()
+  // @IsInt()
+  // discount?: number = 0;
 
-  @IsOptional()
-  @IsInt()
-  price?: number = 0;
+  // @IsArray()
+  // @IsOptional()
+  // category?: string[];
+  // @IsArray()
+  // @IsOptional()
+  // images?: string[];
 
-  @IsOptional()
-  @IsInt()
-  discount?: number = 0;
+  // @IsString()
+  // @IsOptional()
+  // description?: string = "";
 
-  @IsArray()
-  @IsOptional()
-  category?: string[];
-  @IsArray()
-  @IsOptional()
-  images?: string[];
+  // @IsArray()
+  // @IsOptional()
+  // color?: string[];
 
-  @IsString()
-  @IsOptional()
-  description?: string = "";
-
-  @IsArray()
-  @IsOptional()
-  color?: string[];
-
-  @IsArray()
-  @IsOptional()
-  size?: string[];
+  // @IsArray()
+  // @IsOptional()
+  // size?: string[];
 }
