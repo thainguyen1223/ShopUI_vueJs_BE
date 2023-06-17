@@ -11,7 +11,9 @@ import {
   IsOptional,
   IsString,
   IsInt,
-  IsArray
+  IsArray,
+  isArray,
+  ArrayNotEmpty
 } from "class-validator";
 import internal from "stream";
 
@@ -33,16 +35,18 @@ export class CreateRequireClothesDto {
   @IsString()
   phone: string;
 
-  // @IsNotEmpty()
-  // @IsEmail()
-  // email: string;
-
   @IsNotEmpty()
+  @IsEmail()
+  email: string;
+
   @IsString()
   additional: string;
 
-  @IsString()
-  title?: string ;
+  @IsArray()
+  @ArrayNotEmpty()
+  arraySp? : object[];
+  // @IsString()
+  // title?: string ;
 
   // @IsOptional()
   // @IsInt()

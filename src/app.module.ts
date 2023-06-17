@@ -8,7 +8,7 @@ import { UserModule } from "./users/users.module";
 
 import { AuthModule } from "./auth/auth.module";
 import { ProfileModule } from "./profile/profile.module";
-import { EventsModule } from "./events/events.module";
+import { FeedBacksModule } from "./feedback/feedbacks.module";
 import { ClothesModule } from './clothes/clothes.module';
 
 import { RequireClothesModule } from './require-clothes/require-clothes.module';
@@ -19,7 +19,7 @@ import { RequireClothesModule } from './require-clothes/require-clothes.module';
     UserModule,
     AuthModule,
     ProfileModule,
-    EventsModule,
+    FeedBacksModule,
     ClothesModule,
     RequireClothesModule,
   ],

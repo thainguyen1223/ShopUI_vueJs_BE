@@ -27,24 +27,25 @@ export class ClothesService {
       }
 
       //get all
-      async showAll(page: number = 1, limit: number = 9, queryFilter: string = '' ): Promise<any> {
+      async showAll(page: number = 1, limit: number = 9, queryFilter: string = '', searchValue: string = '' ): Promise<any> {
         let count;
         let data;
+        let searchRegex = new RegExp(["^", searchValue].join(""),"i");
         if(queryFilter !== ""){
           let regFilter = new RegExp(["^", queryFilter,"$"].join(""),"i");
-            data = await this.ClothesModel.find({ $or: [{size: {$in : regFilter}}, {color:{$in: regFilter}}, {category: {$in: regFilter}}]})
+            data = await this.ClothesModel.find({$and:[{ $or: [{size: {$in : regFilter}}, {color:{$in: regFilter}}, {category: {$in: regFilter}}]}, {title:{$regex: searchValue, $options: 'i'}}]})
             .limit(limit)
             .skip(limit * (page - 1))
             .sort({ title: "desc" })
             .exec();
-            count = await this.ClothesModel.find({ $or: [{size: {$in : regFilter}}, {color:{$in: regFilter}}, {category: {$in: regFilter}}]}).count()
+            count = await this.ClothesModel.find({$and:[{ $or: [{size: {$in : regFilter}}, {color:{$in: regFilter}}, {category: {$in: regFilter}}]}, {title:{$regex: searchValue, $options: 'i'}}]}).count()
         }else{
-          data = await this.ClothesModel.find()
+          data = await this.ClothesModel.find({title:{$regex: searchValue, $options: 'i'}})
           .limit(limit)
           .skip(limit * (page - 1))
           .sort({ title: "desc" })
           .exec();
-          count = await this.ClothesModel.find().count()
+          count = await this.ClothesModel.find({title:{$regex: searchValue, $options: 'i'}}).count()
         }
         
     

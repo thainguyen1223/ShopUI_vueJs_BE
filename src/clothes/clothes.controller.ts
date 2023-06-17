@@ -16,8 +16,8 @@ export class ClothesController {
     }
 
     @Get("")
-    showAllClothes(@Query("limit") limit: number, @Query("page") page: number, @Query("queryFilter") queryFilter: string): Promise<Clothes[]> {
-      return this.clothesService.showAll(page, limit, queryFilter );
+    showAllClothes(@Query("limit") limit: number, @Query("page") page: number, @Query("queryFilter") queryFilter: string, @Query("searchValue") searchValue: string): Promise<Clothes[]> {
+      return this.clothesService.showAll(page, limit, queryFilter, searchValue );
     }
 
     @Post("")

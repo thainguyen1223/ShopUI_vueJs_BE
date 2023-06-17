@@ -7,40 +7,30 @@ import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { User } from "src/users/schemas/users.schema";
 import { Transform, Type } from "class-transformer";
 
-export type EventsDocument = HydratedDocument<Events>;
+export type FeedBacksDocument = HydratedDocument<FeedBack>;
 
 @Schema()
-export class Events {
+export class FeedBack {
   @Transform(({ value }) => value.toString())
   _id: mongoose.ObjectId;
 
   @Prop()
-  title: string;
+  name: string;
 
   @Prop()
-  description: string;
+  email: string;
 
   @Prop()
-  note: string;
+  subject: string;
 
   @Prop()
-  startDate: string;
+  message: string;
 
-  @Prop()
-  endDate: string;
 
-  @Prop()
-  type: string;
-
-  @Prop()
-  status: string;
-
-  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: User.name }] })
-  //@Type(() => User)
-  participants: User[];
+ 
 }
 
-export const EventsSchema = SchemaFactory.createForClass(Events);
+export const FeedBacksSchema = SchemaFactory.createForClass(FeedBack);
 
 // export const NewSchema = new mongoose.Schema({
 //   //_id: mongoose.Schema.Types.ObjectId,

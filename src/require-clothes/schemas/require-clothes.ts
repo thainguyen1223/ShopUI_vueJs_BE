@@ -17,9 +17,7 @@ export class RequireClothes {
   lastname: string;
 
   @Prop()
-  statictreet: string;
-
-
+  street: string;
 
   @Prop()
   phone: string;
@@ -28,43 +26,10 @@ export class RequireClothes {
   email: string;
 
   @Prop()
-  status: string;
-
-  @Prop()
   additional: string;
 
-  @Prop()
-  title: string;
-
-  // @Prop()
-  // quantity: string;
-
-  // @Prop()
-  // new: string;
-
-  // @Prop()
-  // best: string;
-
-  // @Prop()
-  // price: string;
-
-  // @Prop()
-  // discount: string;
-
-  // @Prop([String])
-  // category: string[];
-
-  // @Prop([String])
-  // images: string[];
-
-  // @Prop()
-  // description: string;
-
-  // @Prop([String])
-  // color: string[];
-
-  // @Prop([String])
-  // size: string[];
+  @Prop([Object])
+  arraySp: object[]
 }
 
 export const RequireClothesSchema = SchemaFactory.createForClass(RequireClothes);
